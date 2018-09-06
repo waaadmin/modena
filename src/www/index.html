@@ -51,25 +51,60 @@
     <!-- Scripts: Footer -->
     <script>
         function initMap() {
-            var myLatLng = { lat: -25.363, lng: 131.044 };
-
             // Create a map object and specify the DOM element
             // for display.
             var map = new google.maps.Map(document.getElementById('map'), {
-                center: myLatLng,
-                zoom: 4
+                center: { lat: 0, lng: 0 }   // Initialized Lat/Long
+                , zoom: 2.4     // Initialized Zoom
             });
+            var infoWindow = new google.maps.InfoWindow();
 
-            // Create a marker and set its position.
-            var marker = new google.maps.Marker({
-                map: map,
-                position: myLatLng,
-                title: 'Hello World!'
-            });
+            //Capture Users current location
+            if (navigator && navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function (pos) {  // Success CallBack
+                        var coord = {
+                            lat: pos.coords.latitude,
+                            lng: pos.coords.longitude
+                        };
+
+                        infoWindow.setPosition(coord);
+                        infoWindow.setContent('Default Location')
+                        infoWindow.open(map);
+                        map.setCenter(coord);
+                        map.zoom = 13;  // roughly city-level
+                    },
+                    function (err) {  // Error Callback
+                        switch (error.code) {
+                            case error.PERMISSION_DENIED:
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                break;
+                            case error.TIMEOUT:
+                                break;
+                            default:    // Handles all other Errors not handled
+                                break;
+                        }
+
+                        // Send Error information to API
+
+                        // Show response to User
+                        infoWindow.setPosition(map.getCenter());
+                        infoWindow.setContent('ERROR: The GeoLocation service failed!')
+                        infoWindow.open(map);
+
+                    }, { // Position Options
+
+                    }
+                )
+            } else {
+                infoWindow.setPosition(map.getCenter());
+                infoWindow.setContent('ERROR: This browser does not support geolocation!');
+                infoWindow.open(map);
+            }
         }
-
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA05XpsSMFeFmobJtVKAfdS6KI2jbxF1rg&callback=initMap"></script>
 </body>
 
 </html>
