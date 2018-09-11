@@ -1,5 +1,17 @@
+/***
+ CSS Styles should be implemented from Generic -> Very Specific
+**/
+
+// Element Designations (Generic)
 body {
     height: 100vh;
-    background-color: white;
-    
+    background-color: white;   
+}
+
+// Class Designations
+
+
+// ID Designations (Very Specific)
+#map {
+    height: 100vh;
 }

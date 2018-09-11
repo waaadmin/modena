@@ -1,5 +1,12 @@
+/***
+ CSS Styles should be implemented from Generic -> Very Specific
+**/
 body {
   height: 100vh;
   background-color: white;
+}
+
+#map {
+  height: 100vh;
 }
 /*# sourceMappingURL=app.css.map */
