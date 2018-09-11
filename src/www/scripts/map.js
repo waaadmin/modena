@@ -6,8 +6,6 @@ function initMap() {
         center: coord   // Initialized Lat/Long
         , zoom: 2.4     // Initialized Zoom
     });
-    var infoWindow = new google.maps.InfoWindow();
-    var content = 'Default Location';
 
     //Capture Users current location
     if (navigator && navigator.geolocation) {
