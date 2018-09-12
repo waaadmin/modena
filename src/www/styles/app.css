@@ -9,4 +9,8 @@ body {
 #map {
   height: 100vh;
 }
+
+#uCoord {
+  background-color: grey;
+}
 /*# sourceMappingURL=app.css.map */
