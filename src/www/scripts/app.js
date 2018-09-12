@@ -1,5 +1,7 @@
 
-$(document).ready(function () {
+jQuery(document).ready(function () {
+    // Load Application JS File Resources
+
     // Check if User is Authenticated or Anonymous
 
     // If Anonymous, show Login
