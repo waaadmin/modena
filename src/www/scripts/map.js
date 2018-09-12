@@ -5,7 +5,9 @@ function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
         center: coord   // Initialized Lat/Long
         , zoom: 2.4     // Initialized Zoom
+        , disableDefaultUI: true
     });
+    $('#uCoordContainer').toggle();
 
     //Capture Users current location
     if (navigator && navigator.geolocation) {
@@ -18,6 +20,9 @@ function initMap() {
                 setPin(map, coord );
                 map.setCenter(coord);
                 map.setZoom(13);
+                
+                $('#uCoordContainer').toggle();
+                setCoordinateLabel(coord);
             },
             function (err) {  // Error Callback
                 switch (err.code) {
@@ -42,7 +47,6 @@ function initMap() {
     } else {
         setPin(map, map.getCenter(),'ERROR: This browser does not support geolocation!' );
     }
-
 }
 
 /**
@@ -56,4 +60,8 @@ function setPin(map, coord, content = 'Default Location'){
     infoWindow.setPosition(coord);
     infoWindow.setContent(content);
     infoWindow.open(map);
+}
+
+function setCoordinateLabel(coord){
+    $('#uCoord').text(String.format('LAT: {0}; LNG: {1}', coord.lat, coord.lng));
 }
