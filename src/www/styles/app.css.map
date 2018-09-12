@@ -1,8 +1,12 @@
 {
     "version": 3,
-    "mappings": "AAAA;;GAEG;AAGH,AAAA,IAAI,CAAC;EACD,MAAM,EAAE,KAAK;EACb,gBAAgB,EAAE,KAAK;CAC1B;;AAMD,AAAA,IAAI,CAAC;EACD,MAAM,EAAE,KAAK;CAChB",
+    "mappings": "AAAA;;GAEG;AEFH,AAAA,IAAI,CAAC;EACD,MAAM,EAAE,KAAK;EACb,gBAAgB,EDDZ,OAAO;CCEd;;AEHD,AAAA,IAAI,CAAC;EACD,MAAM,EAAE,KAAK;CAChB;;AAED,AAAA,OAAO,CAAA;EACH,gBAAgB,EAAE,IAAI;CACzB",
     "sources": [
-        "app.scss"
+        "app.scss",
+        "imports/_color.scss",
+        "imports/_element.scss",
+        "imports/_class.scss",
+        "imports/_ids.scss"
     ],
     "names": [],
     "file": "app.css"

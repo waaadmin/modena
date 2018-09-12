@@ -1,17 +1,13 @@
 /***
  CSS Styles should be implemented from Generic -> Very Specific
 **/
+@import 'imports/color';
 
 // Element Designations (Generic)
-body {
-    height: 100vh;
-    background-color: white;   
-}
+@import 'imports/element';
 
 // Class Designations
-
+@import 'imports/class';
 
 // ID Designations (Very Specific)
-#map {
-    height: 100vh;
-}
+@import 'imports/ids';

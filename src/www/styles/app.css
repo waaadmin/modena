@@ -3,10 +3,14 @@
 **/
 body {
   height: 100vh;
-  background-color: white;
+  background-color: #ffffff;
 }
 
 #map {
   height: 100vh;
+}
+
+#uCoord {
+  background-color: grey;
 }
 /*# sourceMappingURL=app.css.map */
