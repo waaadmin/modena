@@ -23,6 +23,9 @@ function initMap() {
                 
                 $('#uCoordContainer').toggle();
                 setCoordinateLabel(coord);
+
+                var transitLayer = new google.maps.TransitLayer();
+                transitLayer.setMap(map);
             },
             function (err) {  // Error Callback
                 switch (err.code) {
