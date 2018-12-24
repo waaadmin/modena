@@ -1,0 +1,10 @@
+<!--
+    @id - Unique DOM ID of the Link
+    @link - Full or Relative URL
+    @text - Text to display
+-->
+<script id="tmplMenuItem" type="text/x-handlebars-template">
+    {{#if link}}{{#each link}}
+    <li id="{{id}}" class="nav-item"><a href="{{link}}" class="nav-link">{{text}}</a></li>
+    {{/each}}{{/if}}
+</script>
